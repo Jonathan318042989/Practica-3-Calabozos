@@ -6,6 +6,7 @@ package kass.concurrente.modelos;
  * si el foco esta prendido o no
  * Se desconoce el estado inicial del foco (Usar un random, para que sea
  * pseudoaleatorio el estado inicial)
+ * 
  * @author <Equipo>
  * @version 1.0
  */
@@ -16,7 +17,7 @@ public class Habitacion {
      * Metodo Constructor
      * Aqui se define el como estara el foco inicialmente
      */
-    public Habitacion(){
+    public Habitacion() {
 
     }
 
@@ -26,11 +27,30 @@ public class Habitacion {
      * En este caso se controla desde fuera
      * Es similar al algoritmo que progonan y similar al de su tarea
      * El prisionero espera una cantidad finita de tiempo
+     * 
      * @param prisionero El prisionero que viene entrando
      * @return false si ya pasaron todos, true en otro caso
      * @throws InterruptedException Si falla algun hilo
      */
-    public Boolean entraHabitacion(Prisionero prisionero) throws InterruptedException{
+    public Boolean entraHabitacion(Prisionero prisionero) throws InterruptedException {
         return null;
+    }
+
+    /**
+     * Bool que indica si está prendido o apagado el interruptor
+     * 
+     * @return true si está encendido, false si no
+     */
+    public Boolean getPrendido() {
+        return prendido;
+    }
+
+    /**
+     * Establece cómo está el interruptor
+     * 
+     * @param prendido true si está encendido, false si no
+     */
+    public void setPrendido(Boolean prendido) {
+        this.prendido = prendido;
     }
 }
