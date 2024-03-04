@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: kass.concurrente.modelos.HabitacionTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.024 s <<< FAILURE! - in kass.concurrente.modelos.HabitacionTest
+marcado  Time elapsed: 0.016 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The method setPrendido(boolean) is undefined for the type Habitacion
+
+	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
+
+simSimple  Time elapsed: 0 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The method setPrendido(boolean) is undefined for the type Habitacion
+
+	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
+
+switchTest1  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The method setPrendido(boolean) is undefined for the type Habitacion
+
+	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
+
+switchTest2  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The method setPrendido(boolean) is undefined for the type Habitacion
+
+	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
+
