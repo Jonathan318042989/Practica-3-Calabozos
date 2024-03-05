@@ -40,6 +40,7 @@ public class Habitacion {
                 return true;
             } else {
                 this.setPrendido(true);
+                prisionero.setMarcado(true);
                 return true;
             }
         } else if (Boolean.TRUE.equals(prisionero.getEsVocero()) && prisionero instanceof Vocero) {
@@ -48,11 +49,7 @@ public class Habitacion {
                 this.setPrendido(false);
                 vocero.incrementaContador();
             }
-            if (vocero.getContador() > Contante.PRISIONEROS) {
-                return false;
-            } else {
-                return true;
-            }
+            return vocero.getContador() > Contante.PRISIONEROS;
         }
         return true;
     }

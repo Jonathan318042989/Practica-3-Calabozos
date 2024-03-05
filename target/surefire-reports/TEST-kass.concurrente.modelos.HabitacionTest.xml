@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="kass.concurrente.modelos.HabitacionTest" time="0.024" tests="4" errors="4" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="kass.concurrente.modelos.HabitacionTest" time="0.031" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="MX"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\Jonathan\AppData\Local\Temp\surefire9383209625665364323\surefirebooter4285144822898347964.jar C:\Users\Jonathan\AppData\Local\Temp\surefire9383209625665364323 2024-03-03T20-30-14_233-jvmRun1 surefire16239132540833730713tmp surefire_016040634210919198809tmp"/>
+    <property name="sun.java.command" value="C:\Users\Jonathan\AppData\Local\Temp\surefire5649433834048445080\surefirebooter7792419008658931686.jar C:\Users\Jonathan\AppData\Local\Temp\surefire5649433834048445080 2024-03-04T23-56-30_787-jvmRun1 surefire8012449668997893240tmp surefire_015877811213786789230tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="c:\Users\Jonathan\Desktop\Practica-3-Calabozos\target\test-classes;c:\Users\Jonathan\Desktop\Practica-3-Calabozos\target\classes;C:\Users\Jonathan\.m2\repository\org\junit\jupiter\junit-jupiter\5.5.1\junit-jupiter-5.5.1.jar;C:\Users\Jonathan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.1\junit-jupiter-api-5.5.1.jar;C:\Users\Jonathan\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Jonathan\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Jonathan\.m2\repository\org\junit\platform\junit-platform-commons\1.5.1\junit-platform-commons-1.5.1.jar;C:\Users\Jonathan\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.1\junit-jupiter-params-5.5.1.jar;C:\Users\Jonathan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.1\junit-jupiter-engine-5.5.1.jar;C:\Users\Jonathan\.m2\repository\org\junit\platform\junit-platform-engine\1.5.1\junit-platform-engine-1.5.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Jonathan\AppData\Local\Temp\surefire9383209625665364323\surefirebooter4285144822898347964.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Jonathan\AppData\Local\Temp\surefire5649433834048445080\surefirebooter7792419008658931686.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8+9-LTS-211"/>
@@ -56,36 +56,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="marcado" classname="kass.concurrente.modelos.HabitacionTest" time="0.016">
-    <error message="Unresolved compilation problem: &#10;	The method setPrendido(boolean) is undefined for the type Habitacion&#10;" type="java.lang.Error">java.lang.Error: 
-Unresolved compilation problem: 
-	The method setPrendido(boolean) is undefined for the type Habitacion
-
-	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
-</error>
-  </testcase>
-  <testcase name="simSimple" classname="kass.concurrente.modelos.HabitacionTest" time="0">
-    <error message="Unresolved compilation problem: &#10;	The method setPrendido(boolean) is undefined for the type Habitacion&#10;" type="java.lang.Error">java.lang.Error: 
-Unresolved compilation problem: 
-	The method setPrendido(boolean) is undefined for the type Habitacion
-
-	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
-</error>
-  </testcase>
-  <testcase name="switchTest1" classname="kass.concurrente.modelos.HabitacionTest" time="0.001">
-    <error message="Unresolved compilation problem: &#10;	The method setPrendido(boolean) is undefined for the type Habitacion&#10;" type="java.lang.Error">java.lang.Error: 
-Unresolved compilation problem: 
-	The method setPrendido(boolean) is undefined for the type Habitacion
-
-	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
-</error>
-  </testcase>
-  <testcase name="switchTest2" classname="kass.concurrente.modelos.HabitacionTest" time="0.001">
-    <error message="Unresolved compilation problem: &#10;	The method setPrendido(boolean) is undefined for the type Habitacion&#10;" type="java.lang.Error">java.lang.Error: 
-Unresolved compilation problem: 
-	The method setPrendido(boolean) is undefined for the type Habitacion
-
-	at kass.concurrente.modelos.HabitacionTest.setUp(HabitacionTest.java:20)
-</error>
-  </testcase>
+  <testcase name="marcado" classname="kass.concurrente.modelos.HabitacionTest" time="0.018"/>
+  <testcase name="simSimple" classname="kass.concurrente.modelos.HabitacionTest" time="0.001"/>
+  <testcase name="switchTest1" classname="kass.concurrente.modelos.HabitacionTest" time="0.001"/>
+  <testcase name="switchTest2" classname="kass.concurrente.modelos.HabitacionTest" time="0.001"/>
 </testsuite>
