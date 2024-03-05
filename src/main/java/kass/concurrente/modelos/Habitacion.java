@@ -1,5 +1,7 @@
 package kass.concurrente.modelos;
 
+import kass.concurrente.constantes.Contante;
+
 /**
  * Clase que fungira como habitacion
  * Se sabe que existe un interruptor que nos dice
@@ -18,7 +20,7 @@ public class Habitacion {
      * Aqui se define el como estara el foco inicialmente
      */
     public Habitacion() {
-
+        setPrendido(Math.random() < 0.5);
     }
 
     /**
@@ -33,7 +35,26 @@ public class Habitacion {
      * @throws InterruptedException Si falla algun hilo
      */
     public Boolean entraHabitacion(Prisionero prisionero) throws InterruptedException {
-        return null;
+        if (Boolean.FALSE.equals(prisionero.getEsVocero())) {
+            if (Boolean.TRUE.equals(prisionero.getMarcado())) {
+                return true;
+            } else {
+                this.setPrendido(true);
+                return true;
+            }
+        } else if (Boolean.TRUE.equals(prisionero.getEsVocero()) && prisionero instanceof Vocero) {
+            Vocero vocero = (Vocero) prisionero;
+            if (Boolean.TRUE.equals(this.getPrendido())) {
+                this.setPrendido(false);
+                vocero.incrementaContador();
+            }
+            if (vocero.getContador() > Contante.PRISIONEROS) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return true;
     }
 
     /**
