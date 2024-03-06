@@ -2,6 +2,7 @@ package kass.concurrente.constantes;
 
 /**
  * Clase de constantes que alberga nuestro programa
+ * 
  * @author Kassandra Mirael
  * @version 1.0
  */

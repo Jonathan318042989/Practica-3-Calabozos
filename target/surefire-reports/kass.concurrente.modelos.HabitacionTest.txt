@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: kass.concurrente.modelos.HabitacionTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in kass.concurrente.modelos.HabitacionTest
-marcado  Time elapsed: 0.018 s
-simSimple  Time elapsed: 0.001 s
-switchTest1  Time elapsed: 0.001 s
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in kass.concurrente.modelos.HabitacionTest
+marcado  Time elapsed: 0.016 s
+simSimple  Time elapsed: 0 s
+switchTest1  Time elapsed: 0 s
 switchTest2  Time elapsed: 0.001 s

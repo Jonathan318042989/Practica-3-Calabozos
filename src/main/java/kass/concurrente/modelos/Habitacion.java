@@ -38,7 +38,7 @@ public class Habitacion {
         if (Boolean.FALSE.equals(prisionero.getEsVocero())) {
             if (Boolean.TRUE.equals(prisionero.getMarcado())) {
                 return true;
-            } else {
+            } else if (Boolean.FALSE.equals(this.getPrendido())) {
                 this.setPrendido(true);
                 prisionero.setMarcado(true);
                 return true;
@@ -49,6 +49,7 @@ public class Habitacion {
                 this.setPrendido(false);
                 vocero.incrementaContador();
             }
+            vocero.setMarcado(true);
             return vocero.getContador() > Contante.PRISIONEROS;
         }
         return true;
