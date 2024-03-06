@@ -14,6 +14,7 @@ import kass.concurrente.constantes.Contante;
  */
 public class Habitacion {
     private Boolean prendido;
+    private Boolean todosPasaron;
 
     /**
      * Metodo Constructor
@@ -21,6 +22,7 @@ public class Habitacion {
      */
     public Habitacion() {
         setPrendido(Math.random() < 0.5);
+        setTodosPasaron(false);
     }
 
     /**
@@ -50,7 +52,7 @@ public class Habitacion {
                 vocero.incrementaContador();
             }
             vocero.setMarcado(true);
-            return vocero.getContador() > Contante.PRISIONEROS;
+            return vocero.getContador() >= Contante.PRISIONEROS - 1;
         }
         return true;
     }
@@ -72,4 +74,13 @@ public class Habitacion {
     public void setPrendido(Boolean prendido) {
         this.prendido = prendido;
     }
+
+    public Boolean getTodosPasaron() {
+        return todosPasaron;
+    }
+
+    public void setTodosPasaron(Boolean todosPasaron) {
+        this.todosPasaron = todosPasaron;
+    }
+
 }

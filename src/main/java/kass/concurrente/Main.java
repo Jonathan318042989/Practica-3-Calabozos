@@ -23,6 +23,7 @@ public class Main implements Runnable {
     Lock lock;
     Prisionero[] prisioneros;
     Habitacion habitacion;
+    private static final Logger LOG = Logger.getLogger("paquete.NombreClase");
 
     public Main() {
         lock = new ReentrantLock();
@@ -48,8 +49,29 @@ public class Main implements Runnable {
      */
     @Override
     public void run() {
-        int id = Integer.valueOf(Thread.currentThread().getName());
-
+        int id = Integer.parseInt(Thread.currentThread().getName());
+        System.out.println(id);
+        while (Boolean.FALSE.equals(habitacion.getTodosPasaron())) {
+            if (lock.tryLock()) {
+                String prisionero = "Prisionero " + id + " entrando";
+                LOG.info(prisionero);
+                try {
+                    habitacion.entraHabitacion(prisioneros[id]);
+                    Thread.sleep(Contante.CINCO_SEGUNDOS);
+                    lock.lock();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    lock.unlock();
+                }
+            }
+        }
+        if (id == 0 && Boolean.TRUE.equals(prisioneros[id].getEsVocero())) {
+            LOG.info("Ya pasaron todos los prisioneros");
+            Vocero vocero = (Vocero) prisioneros[id];
+            String prisionerosPasados = String.valueOf(vocero.getContador());
+            LOG.info(prisionerosPasados);
+        }
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -57,16 +79,14 @@ public class Main implements Runnable {
         List<Thread> hilos = new ArrayList<>(); // Lista de hilos
 
         for (int i = 0; i < Contante.PRISIONEROS; ++i) {
-            Thread t = new Thread(m, "" + i);
-            hilos.add(t);
-            t.start();
+            Thread hilo = new Thread(m, "" + i);
+            hilos.add(hilo);
+            hilo.start();
         }
 
         for (Thread hilo : hilos) {
             hilo.join();
         }
-        final Logger LOG = Logger.getLogger("paquete.NombreClase"); // EJEMPLO LOGGER
-
         if (Boolean.TRUE.equals(LOGS))
             LOG.info("HOLA SOY UN MENSAJE");
     }
