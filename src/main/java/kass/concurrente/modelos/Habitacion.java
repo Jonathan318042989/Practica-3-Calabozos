@@ -52,6 +52,7 @@ public class Habitacion {
                 vocero.incrementaContador();
             }
             vocero.setMarcado(true);
+            this.setTodosPasaron(vocero.getContador() >= Contante.PRISIONEROS - 1);
             return vocero.getContador() >= Contante.PRISIONEROS - 1;
         }
         return true;

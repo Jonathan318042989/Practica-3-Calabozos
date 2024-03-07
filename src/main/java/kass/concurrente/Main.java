@@ -50,15 +50,14 @@ public class Main implements Runnable {
     @Override
     public void run() {
         int id = Integer.parseInt(Thread.currentThread().getName());
-        System.out.println(id);
         while (Boolean.FALSE.equals(habitacion.getTodosPasaron())) {
-            if (lock.tryLock()) {
+            boolean disponible = lock.tryLock();
+            if (disponible) {
                 String prisionero = "Prisionero " + id + " entrando";
                 LOG.info(prisionero);
                 try {
                     habitacion.entraHabitacion(prisioneros[id]);
-                    Thread.sleep(Contante.CINCO_SEGUNDOS);
-                    lock.lock();
+                    Thread.sleep(Contante.UN_SEGUNDO);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
@@ -87,7 +86,5 @@ public class Main implements Runnable {
         for (Thread hilo : hilos) {
             hilo.join();
         }
-        if (Boolean.TRUE.equals(LOGS))
-            LOG.info("HOLA SOY UN MENSAJE");
     }
 }
