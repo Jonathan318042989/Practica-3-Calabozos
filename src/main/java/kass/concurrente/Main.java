@@ -9,8 +9,6 @@ import java.util.logging.Logger;
 import kass.concurrente.constantes.Contante;
 import kass.concurrente.modelos.*;
 
-import static kass.concurrente.constantes.Contante.LOGS;
-
 /**
  * Clase principal, se ejecuta todo la simulacion
  * Como en el cuento.
@@ -35,17 +33,8 @@ public class Main implements Runnable {
         }
     }
 
-    /*
-     * INSTRUCCIONES:
-     * 1.- Ya genere el lock, es un reentrantLock, investiguen que hace
-     * 2.- Tenenemos que tener un lugar el donde se albergaran los prisioneros
-     * 3.- Tenemos que tener un lugar donde se albergan los Hilos
-     * 4.- Se nececita un objeto de tipo Habitacion para que sea visitada
-     * 5.- Aqui controlaremos el acceso a la habitacion, aunque por defecto tenia
-     * exclusion mutua
-     * aqui hay que especificar el como se controlara
-     * 6.- Hay que estar ITERANDO constantemente para que todos los prisiones puedan
-     * ir ingresando
+    /**
+     * Función donde se ejecutará
      */
     @Override
     public void run() {
@@ -53,29 +42,36 @@ public class Main implements Runnable {
         while (Boolean.FALSE.equals(habitacion.getTodosPasaron())) {
             boolean disponible = lock.tryLock();
             if (disponible) {
-                String prisionero = "Prisionero " + id + " entrando";
+                String prisionero = "\u001B[34m Prisionero " + id + " entrando";
                 LOG.info(prisionero);
                 try {
                     habitacion.entraHabitacion(prisioneros[id]);
-                    Thread.sleep(Contante.UN_SEGUNDO);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 } finally {
                     lock.unlock();
+                    try {
+                        Thread.sleep(Contante.UN_SEGUNDO);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        Thread.currentThread().interrupt();
+                    }
                 }
             }
         }
         if (id == 0 && Boolean.TRUE.equals(prisioneros[id].getEsVocero())) {
-            LOG.info("Ya pasaron todos los prisioneros");
+            LOG.info("\u001B[31m Ya pasaron todos los prisioneros");
             Vocero vocero = (Vocero) prisioneros[id];
-            String prisionerosPasados = String.valueOf(vocero.getContador());
+            String numeroPrisioneros = String.valueOf(vocero.getContador());
+            String prisionerosPasados = "\u001B[31m Pasaron " + numeroPrisioneros + " prisioneros";
             LOG.info(prisionerosPasados);
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
         Main m = new Main();
-        List<Thread> hilos = new ArrayList<>(); // Lista de hilos
+        List<Thread> hilos = new ArrayList<>();
 
         for (int i = 0; i < Contante.PRISIONEROS; ++i) {
             Thread hilo = new Thread(m, "" + i);
